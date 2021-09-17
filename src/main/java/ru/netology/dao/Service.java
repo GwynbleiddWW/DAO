@@ -1,11 +1,9 @@
 package ru.netology.dao;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
-import org.springframework.jdbc.core.JdbcTemplate;
 
 @org.springframework.stereotype.Service
-public class Service  implements CommandLineRunner {
+public class Service {
 
     Repository repository;
 
@@ -14,17 +12,8 @@ public class Service  implements CommandLineRunner {
         this.repository = repository;
     }
 
-    @Autowired
-    JdbcTemplate template;
 
-
-    //???
-    public static String getProductName(String productName) {
-        return 
-    }
-
-    @Override
-    public void run(String... args) throws Exception {
-        
+    public String getProductName(String productName) {
+        return repository.getProductName(productName);
     }
 }

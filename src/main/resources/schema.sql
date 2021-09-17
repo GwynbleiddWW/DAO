@@ -9,11 +9,7 @@ create table netology.customers
     phone_number int
 );
 
-insert into netology.customers
-values (1, 'Peter', 'Parker', 19, 5557896),
-       (2, 'Bruce', 'Wayne', 40, 666999);
-
-create table netology.orders
+create table netology.customer_orders
 (
     id           int NOT NULL PRIMARY KEY,
     date         varchar(255),
@@ -23,6 +19,10 @@ create table netology.orders
     foreign key (customer_id)  references netology.customers(id)
 );
 
-insert into netology.orders
+insert into netology.customers
+values (1, 'Peter', 'Parker', 19, 5557896),
+       (2, 'Bruce', 'Wayne', 40, 666999);
+
+insert into netology.customer_orders
 values (1, '20.01.2009', 1, 'stew', 299.99),
        (2, '02.08.2021', 2, 'beer', 100.99);
